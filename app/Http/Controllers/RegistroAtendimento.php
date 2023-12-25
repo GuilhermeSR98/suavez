@@ -2,63 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Atendente;
+use App\Models\ControleAtendente;
 use Illuminate\Http\Request;
 
 class RegistroAtendimento extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('atendimento.index');
+        $atendentes = Atendente::get();
+        $controleAtendente = ControleAtendente::first();
+
+        return view('atendimento.index', compact('atendentes', 'controleAtendente'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function peguei()
     {
-        //
-    }
+        $atendentes = Atendente::get();
+        $controleAtendente = ControleAtendente::first();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        if ($atendentes->count() === $controleAtendente->indice_proximo + 1) {
+            $controleAtendente->indice_atual = $controleAtendente->indice_proximo;
+            $controleAtendente->indice_proximo = 0;
+        } else {
+            $controleAtendente->indice_atual = $controleAtendente->indice_proximo;
+            $controleAtendente->indice_proximo = $controleAtendente->indice_proximo + 1;
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        /* $controleAtendente->indice_proximo = 1;
+        $controleAtendente->indice_atual = 0; */
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $controleAtendente->save();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect('/')->with(compact('atendentes', 'controleAtendente'));
     }
 }
