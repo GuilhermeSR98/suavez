@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ChatPegoEvent;
 use App\Models\Atendente;
 use App\Models\ControleAtendente;
 use Illuminate\Http\Request;
@@ -34,6 +35,8 @@ class RegistroAtendimento extends Controller
 
 
         $controleAtendente->save();
+
+        event(new ChatPegoEvent());
 
         return redirect('/')->with(compact('atendentes', 'controleAtendente'));
     }
