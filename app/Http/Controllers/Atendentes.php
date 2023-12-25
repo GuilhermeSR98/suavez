@@ -32,8 +32,8 @@ class Atendentes extends Controller
 
         $controleAtendente = ControleAtendente::first();
 
-        $controleAtendente->indice_proximo = 1;
-        $controleAtendente->indice_atual = 0;
+        $controleAtendente->indice_proximo = 0;
+        $controleAtendente->indice_atual = 1;
 
 
         $controleAtendente->save();
@@ -48,8 +48,8 @@ class Atendentes extends Controller
 
         $controleAtendente = ControleAtendente::first();
 
-        $controleAtendente->indice_proximo = 1;
-        $controleAtendente->indice_atual = 0;
+        $controleAtendente->indice_proximo = 0;
+        $controleAtendente->indice_atual = 1;
 
 
         $controleAtendente->save();

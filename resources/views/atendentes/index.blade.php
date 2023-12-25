@@ -1,8 +1,8 @@
 <x-wrapper title="Sua Vez">
     <div class="d-flex flex-column align-items-center vh-100 mt-5">
         <h1>Lista de atendentes</h1>
-        <ul class="list-group w-25 mt-5">
-            <div class="elevation rounded" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: box-shadow 0.3s ease-in-out;">
+        <ul class="list-group w-25 mt-5 border border-light">
+            <div class="elevation rounded" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: box-shadow 0.3s ease-in-out;">
                 @foreach($atendentes as $atendente)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{ $atendente->nome }}
