@@ -9,6 +9,7 @@
         "beyondcode/laravel-websockets": "1.14.1",
         "guzzlehttp/guzzle": "^7.2",
         "guzzlehttp/psr7": "^2.6",
+        "illuminate/database": "*",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
