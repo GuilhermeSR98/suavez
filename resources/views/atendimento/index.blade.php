@@ -1,8 +1,8 @@
 <x-wrapper title="Sua Vez">
-    <div class="general-content d-flex flex-column align-items-center vh-80 mt-5">
+    <div class="general-content d-flex flex-column align-items-center pt-5">
         <div class="header d-flex flex-column align-items-center mb-5">
             <div class="border border-dark border-3 rounded-circle p-4">
-                <img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AEYmBYRbx2cr3oCkfor-ZBw8PEVHNjlWuTbkJiiyDUjp4BUFGnftVnUyZb-Apo-lzzBvhWScJ3qLFzoE4Y1j3nBTYghVrE2g=w1919-h910" alt="Cabeçalho">
+                <img src="https://www.adoorei.com.br/img/logo.dfb5eb16.svg" alt="Logo Adoorei">
             </div>
             <h1 class="mt-4">Sua vez!</h1>
         </div>
